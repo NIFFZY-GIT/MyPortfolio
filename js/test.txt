@@ -1,0 +1,37 @@
+const form = document.querySelector("form");
+
+const fullName = document.getElementById('name');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const subject = document.getElementById('subject');
+const message = document.getElementById('mess');
+const attachment = document.getElementById('attachment');
+
+function sendEmail() {
+    const bodyMessage = `
+        <h2>Contact Form Submission</h2>
+        <p><strong>Full Name:</strong> ${fullName.value}</p>
+        <p><strong>Email:</strong> ${email.value}</p>
+        <p><strong>Phone Number:</strong> ${phone.value}</p>
+        <p><strong>Message:</strong> ${message.value}</p>
+    `;
+
+    Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "niffzy.portfolio@gmail.com",
+        Password: "1A9BC8EA812674A80D7EF8D02B948647D064",
+        To: 'niffzy@gmail.com',
+        From: "niffzy.portfolio@gmail.com",
+        Subject: subject.value,
+        Body: bodyMessage
+    }).then(
+        response => alert("Email sent successfully!")
+    ).catch(
+        error => alert("Failed to send email: " + error)
+    );
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    sendEmail();
+});
