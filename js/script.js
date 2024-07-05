@@ -1,61 +1,95 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
 
-    const fullName = document.getElementById('name');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('phone');
-    const subject = document.getElementById('subject');
-    const message = document.getElementById('mess');
 
-    function sendEmail() {
-        const bodyMessage = `
-            <h2>Contact Form MY portfolio Submission</h2>
-            <p><strong>Full Name:</strong> ${fullName.value}</p>
-            <p><strong>Email:</strong> ${email.value}</p>
-            <p><strong>Phone Number:</strong> ${phone.value}</p>
-            <p><strong>Message:</strong> ${message.value}</p>
-            <p>This is a genarated email do not reply.</p>
-        `;
 
-        Email.send({
-            SecureToken:"fed90ac6-f9ce-4903-9fd0-a690ccb6b00e",
-            Host: "smtp.elasticemail.com",
-            Username: "niffzy.portfolio@gmail.com",
-            Password: "1A9BC8EA812674A80D7EF8D02B948647D064",
-            To: 'niffzy@gmail.com',
-            From: "niffzy.portfolio@gmail.com",
-            Subject: subject.value,
-            Body: bodyMessage
-        }).then(
-            response => {
-                console.log(response);
-                // alert("Email sent successfully!");
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting the default way
 
+        var formData = new FormData(this);
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            var popup = document.getElementById('popup');
+            if (data.success) {
+                popup.textContent = 'Form submitted successfully!';
                 Swal.fire({
-                    title: "Thank you!",
-                    text: "Your message has been sent successfully. We will get back to you soon.",
-                    icon: "success"
-                  });
+                                   title: "Thank you!",
+                                   text: "Your message has been sent successfully. We will get back to you soon.",
+                                    icon: "success"
+                                  });
+            } else {
+                popup.textContent = 'There was an error submitting the form: ' + data.message;
             }
-        ).catch(
-            error => {
-                console.error(error);
-                alert("Failed to send email: " + error);
-            }
-        );
-    }
-
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        
-        // Simple validation
-        if (!fullName.value || !email.value || !phone.value || !subject.value || !message.value) {
-            alert("Please fill out all required fields.");
-            return;
-        }
-
-        sendEmail();
+            popup.style.display = 'block';
+        })
+        .catch(error => {
+            var popup = document.getElementById('popup');
+            popup.textContent = 'There was an error submitting the form: ' + error.message;
+            popup.style.display = 'block';
+        });
     });
+
+
+
+    // const form = document.querySelector("form");
+
+    // const fullName = document.getElementById('name');
+    // const email = document.getElementById('email');
+    // const phone = document.getElementById('phone');
+    // const subject = document.getElementById('subject');
+    // const message = document.getElementById('mess');
+
+    // function sendEmail() {
+    //     const bodyMessage = `
+    //         <h2>Contact Form MY portfolio Submission</h2>
+    //         <p><strong>Full Name:</strong> ${fullName.value}</p>
+    //         <p><strong>Email:</strong> ${email.value}</p>
+    //         <p><strong>Phone Number:</strong> ${phone.value}</p>
+    //         <p><strong>Message:</strong> ${message.value}</p>
+    //     `;
+
+    //     Email.send({
+    //         Host: "smtp.elasticemail.com",
+    //         Username: "niffzy.portfolio@gmail.com",
+    //         Password: "1A9BC8EA812674A80D7EF8D02B948647D064",
+    //         To: 'niffzy@gmail.com',
+    //         From: "niffzy.portfolio@gmail.com",
+    //         Subject: subject.value,
+    //         Body: bodyMessage
+    //     }).then(
+    //         response => {
+    //             console.log(response);
+    //             // alert("Email sent successfully!");
+
+    //             Swal.fire({
+    //                 title: "Thank you!",
+    //                 text: "Your message has been sent successfully. We will get back to you soon.",
+    //                 icon: "success"
+    //               });
+    //         }
+    //     ).catch(
+    //         error => {
+    //             console.error(error);
+    //             alert("Failed to send email: " + error);
+    //         }
+    //     );
+    // }
+
+    // form.addEventListener("submit", (e) => {
+    //     e.preventDefault();
+        
+    //     // Simple validation
+    //     if (!fullName.value || !email.value || !phone.value || !subject.value || !message.value) {
+    //         alert("Please fill out all required fields.");
+    //         return;
+    //     }
+
+    //     sendEmail();
+    // });
 
 
     var scrollToBottomBtn = document.getElementById('contact-btn');
