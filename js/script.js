@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Email:</strong> ${email.value}</p>
             <p><strong>Phone Number:</strong> ${phone.value}</p>
             <p><strong>Message:</strong> ${message.value}</p>
+            <p>This is a genarated email do not reply.</p>
         `;
 
         Email.send({
