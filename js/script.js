@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         Email.send({
-            SecureToken:"5151273d-e90f-4432-95cd-e8e09e3e9552",
-      
+            SecureToken:"fed90ac6-f9ce-4903-9fd0-a690ccb6b00e",
+            Host: "smtp.elasticemail.com",
+            Username: "niffzy.portfolio@gmail.com",
+            Password: "1A9BC8EA812674A80D7EF8D02B948647D064",
             To: 'niffzy@gmail.com',
             From: "niffzy.portfolio@gmail.com",
             Subject: subject.value,
