@@ -13,16 +13,21 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(response => response.json())
         .then(data => {
-            var popup = document.getElementById('popup');
+          
             if (data.success) {
-                popup.textContent = 'Form submitted successfully!';
+            
                 Swal.fire({
                                    title: "Thank you!",
                                    text: "Your message has been sent successfully. We will get back to you soon.",
                                     icon: "success"
                                   });
             } else {
-                popup.textContent = 'There was an error submitting the form: ' + data.message;
+                // popup.textContent = 'There was an error submitting the form: ' + data.message;
+                Swal.fire({
+                    title: "Error!",
+                    text: "There was an error submitting the form: " + data.message,
+                    icon: "error"
+                });
             }
             popup.style.display = 'block';
         })
