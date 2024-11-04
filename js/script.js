@@ -35,7 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
           popup.style.display = "block";
         });
     });
+    var scrollToBottomBtn = document.getElementById("contact-btn");
 
+    scrollToBottomBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  
   // const form = document.querySelector("form");
 
   // const fullName = document.getElementById('name');
@@ -92,16 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //     sendEmail();
   // });
 
-  var scrollToBottomBtn = document.getElementById("contact-btn");
 
-  scrollToBottomBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth",
-    });
-  });
-});
 
 // icon navbar
 let menuIcon = document.querySelector("#menu-icon");
