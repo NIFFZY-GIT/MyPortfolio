@@ -38,33 +38,76 @@ body {
     background: var(--bg-color);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: flex-start; /* Align items from the top */
+    align-items: center; /* Center items horizontally */
     padding: 2rem 0;
     z-index: 100;
     transition: 0.3s;
+    
 }
 
 .logo {
-    font-size: 4rem;
+    font-size: 3rem; /* Adjust for a cleaner, modern size */
     color: var(--main-color);
-    font-weight: 600;
-    margin-bottom: 3rem;
+    font-weight: 700;
     margin-top: 1rem;
     text-align: center;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
+    display: flex;
+    justify-content: flex-start; /* Align text within the container */
     align-items: center; /* Center vertically */
+    margin-left: 2rem; /* Align slightly away from the sidebar */
+    gap: 0.5rem; /* Space between elements if necessary */
+    padding-left: 62rem;
 }
+
+.logo-link {
+    text-decoration: none; /* Remove underline for a clean look */
+    color: var(--main-color);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo-link:hover {
+    color: var(--hover-color); /* Add hover color for interactivity */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.highlight {
+    font-weight: 900;
+    color: var(--accent-color); /* Highlight part of the text with an accent color */
+}
+
+.semi-colon {
+    font-size: 2rem; /* Subtle emphasis on the semicolon */
+    color: var(--text-color);
+    font-weight: 400;
+    margin-left: 0.3rem;
+}
+
+.as {
+    background: var(--second-bg-color);
+    padding: 0.5rem 1rem; /* Add spacing around the logo text */
+    border-radius: 10px; /* Rounded corners for a modern touch */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease;
+}
+
+.as:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
 
 .navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    margin-top: 5rem;
-    max-height: 80vh; /* Limit the height to 80% of the viewport */
-    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%; /* Ensure full width */
+    margin-top: 3rem; /* Add spacing from the logo */
+    max-height: calc(100% - 10rem); /* Adjust height to fit within the sidebar */
+    overflow-y: auto; /* Enable scrolling if necessary */
     scrollbar-width: thin; /* For Firefox */
     scrollbar-color: var(--main-color) var(--second-bg-color); /* For Firefox */
 }
@@ -88,7 +131,7 @@ body {
     font-weight: 500;
     margin: 1rem 0;
     padding: 1rem 2rem;
-    width: 100%;
+    width: 100%; /* Full width for proper alignment */
     text-align: center;
     transition: 0.3s;
 }
@@ -130,7 +173,7 @@ section{
 }
 
 .content {
-    margin-top: 5rem;
+    margin-top: 1rem;
     background: var(--second-bg-color);
     border-radius: 20px;
     padding: 3rem;
@@ -288,3 +331,60 @@ section.gallery {
     font-size: 1rem;
     color: var(--text-color);
 }
+
+.image video {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    outline: none;
+}
+
+/* .image .vid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 700px;
+    max-width: 90%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image:hover {
+    transform: scale(1.03);
+    /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); */
+/* }
+*/
+.image video {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    outline: 3px solid var(--main-color);
+
+} 
+
+#toTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Initially hidden */
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  #toTopBtn:hover {
+    background-color: var(--main-color);
+    transform: scale(1.1); /* Slight zoom effect */
+  }
