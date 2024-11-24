@@ -1,15 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuIcon = document.getElementById("menuIcon");
-    const navbar = document.getElementById("navbar");
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
 
-    menuIcon.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-    });
-
-    // Close the menu when clicking outside of it
-    document.addEventListener("click", (event) => {
-        if (!navbar.contains(event.target) && !menuIcon.contains(event.target)) {
-            navbar.classList.remove("active");
-        }
-    });
+menuIcon.addEventListener("click", () => {
+  menuIcon.classList.toggle("bx-x"); // Toggle the 'bx-x' class on menuIcon
+  navbar.classList.toggle("active"); // Toggle the 'active' class on the navbar
 });
