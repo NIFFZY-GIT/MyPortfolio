@@ -11,31 +11,36 @@
     <title>PS</title>
   </head>
   <body> 
-    <div class="logo">
-        <div class="as">
+    <div class="sticky-header">
+        <div class="logo">
             <a href="ps.html" class="logo-link">
                 <span class="highlight">Professional Skills &nbsp</span> Assessment Portfolio ;
                 <span class="semi-colon"></span>
             </a>
         </div>
+        <div class="home">
+            <a href="/index.html">Go Back</a>
+        </div>
     </div>
+    
+    
     <header class="header">
       <!-- <a href="ps.html" class="logo"> Assessment Portfolio <span>;</span></a> -->
       <!-- <div class="bx bx-menu" id="menu-icon"></div> -->
       <nav class="navbar">
-        <a href="/index.html" class="active">Home</a>
-        <a href="#lec1">Chapter 1</a>
-        <a href="#lec2">Chapter 2</a>
-        <a href="#lec3">Chapter 3</a>
-        <a href="#lec4">Chapter 4</a>
-        <a href="#lec5">Chapter 5</a>
-        <a href="#lec6">Chapter 6</a>
-        <a href="#lec7">Chapter 7</a>
-        <a href="#lec8">Chapter 8</a>
-        <a href="#lec9">Chapter 9</a>
-        <a href="#lec10">Chapter 10</a>
-        <a href="#lec11">Chapter 11</a>
-        <a href="#lec12">Chapter 12</a>
+        <!-- <a href="/index.html" class="active">Home</a> -->
+        <a href="#lec1" class="active">Chapter 1 - ps</a>
+        <a href="#lec2">Chapter 2 - CV</a>
+        <a href="#lec3">Chapter 3 - IS</a>
+        <a href="#lec4">Chapter 4 - PM</a>
+        <a href="#lec5">Chapter 5 - M</a>
+        <a href="#lec6">Chapter 6 - E</a>
+        <a href="#lec7">Chapter 7 - MRD</a>
+        <a href="#lec8">Chapter 8 - MDE</a>
+        <a href="#lec9">Chapter 9 - EM</a>
+        <a href="#lec10">Chapter 10 - WPP </a>
+        <a href="#lec11">Chapter 11 - FF</a>
+        <a href="#lec12">Chapter 12 - NS</a>
         <a href="#lec13">Image Gallery</a>
 
         <span class="active-nav"></span>
@@ -49,7 +54,7 @@
         </div>
         <div class="content-row">
           <div class="image">
-            <img src="/assets/images/1.webp" alt="Placeholder Image" />
+            <img src="/assets/images/ps/ps1.jpg" alt="Placeholder Image" />
           </div>
           <div class="para">
             <h2>What is Professional Skills?</h2>
@@ -149,7 +154,7 @@
             </div>
           </div>
           <div class="image">
-            <img src="/assets/images/2.webp" alt="Placeholder Image" />
+            <img src="/assets/images/1.webp" alt="Placeholder Image" />
           </div>
         </div>
         <div class="topic2">
@@ -1636,17 +1641,18 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/assets/images/ps/3.jpg" alt="Artwork 2" class="gallery-image" />
+                    <img src="/assets/images/ps/mm.jpg" alt="Artwork 2" class="gallery-image" />
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">Kottu X Mojito</h3>
-                        <p class="gallery-description">Our beloved Team</p>
+                        <p class="gallery-description">Our Banner</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/assets/images/ps/4.jpg" alt="Artwork 3" class="gallery-image" />
+                    <img src="/assets/images/ps/3.jpg" alt="Artwork 3" class="gallery-image" />
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">Our Stall</h3>
-                        <p class="gallery-description">Best Stall</p>
+                        <p class="gallery-description">Our Beloved Team
+                        </p>
                     </div>
                 </div>
                 <div class="gallery-item">
@@ -1654,6 +1660,19 @@
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">Negotiation</h3>
                         <p class="gallery-description">Settled for 9000.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/images/ps/4.jpg" alt="Artwork 4" class="gallery-image" />
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Our Stall</h3>
+                        <p class="gallery-description">Best Stall</p>
+                    </div>
+                </div> <div class="gallery-item">
+                    <img src="/assets/images/ps/11.jpg" alt="Artwork 4" class="gallery-image" />
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Friends</h3>
+                        <p class="gallery-description">Gang</p>
                     </div>
                 </div>
               
@@ -1680,6 +1699,31 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+
+</script>
+<script>
+let sections = document.querySelectorAll("section");
+let navLinks = document.querySelectorAll(".navbar a");
+
+window.addEventListener("scroll", () => {
+  let fromTop = window.scrollY + 100; // Offset to adjust for the fixed header
+
+  sections.forEach((section) => {
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (
+          section.getAttribute("id") === link.getAttribute("href").substring(1)
+        ) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+});
 
 </script>
 
