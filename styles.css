@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #033666;
+    --text-color: #f8f3eb;
+    --main-color: #43f5ce;
+    --accent-color: #0e7490;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.content {
+    margin-top: 5rem;
+    background: var(--second-bg-color);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content .topic {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.content .topic h1 {
+    font-size: 2.8rem;
+    color: var(--main-color);
+}
+
+
+
+.content-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.image {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.para {
+    flex: 1;
+    padding: 2rem;
+    text-align: justify;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.content-row {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures proper spacing between elements */
+    margin-bottom: 4rem;
+}
+
+.content-row .image {
+    order: 2; /* Pushes the image to the right */
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+}
+
+.content-row .para {
+    order: 1; /* Keeps the text on the left */
+    flex: 1;
+    padding: 2rem;
+    text-align: justify;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+.content1 {
+    margin-top: 5rem;
+    background: var(--accent-color);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content .topic2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    border: 1px solid var(--main-color);
+    border-radius: 25px;
+}
+
+.content .topic2 h1 {
+    font-size: 2.8rem;
+    color: var(--main-color);
+}
+
