@@ -31,9 +31,10 @@ body {
 /* Existing styles for the header and navbar */
 .header {
     position: fixed;
-    top: 0;
+    top: 10%;
     left: 0;
-    height: 100%;
+    bottom: 0;
+    height: 80%;
     width: 20rem;
     background: var(--bg-color);
     display: flex;
@@ -43,6 +44,7 @@ body {
     padding: 0rem 0;
     z-index: 100;
     transition: 0.3s;
+    /* border: 1px solid var(--main-color); */
     
 }
 /*ssssssssssssssssssssssssssssssssssssssssss*/
@@ -117,20 +119,21 @@ body {
     position: sticky;
     top: 0;
     background-color: var(--second-bg-color);
-    padding: 1rem 2rem;
+    padding: 0rem 2rem;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: center; /* Center content horizontally */
+   padding-left: 0rem;
     align-items: center; /* Center content vertically */
 }
 
 .logo {
-    font-size: 3rem; /* Modern size for clarity */
+    font-size: 4rem; /* Modern size for clarity */
     color: var(--main-color);
     font-weight: bold;
     margin: 0;
-    text-align: center;
+    margin-left: 2rem;
+ 
 }
 
 .logo-link {
