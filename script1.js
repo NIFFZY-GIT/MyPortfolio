@@ -46,3 +46,5 @@ sectionsToAnimate.forEach(section => {
   section.classList.add('section-hidden');
   observer.observe(section);
 });
+
+

@@ -691,3 +691,13 @@ section.gallery {
     animation: slideDown 0.6s ease-in-out;
   }
   
+
+  #pet {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.2s; /* Smooth scaling effect */
+}
