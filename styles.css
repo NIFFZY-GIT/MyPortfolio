@@ -458,8 +458,9 @@ section.gallery {
 
 #toTopBtn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    
+    bottom: 80px;
+    right: 12px;
     display: none; /* Initially hidden */
     width: 50px;
     height: 50px;
@@ -567,6 +568,7 @@ section.gallery {
         width: 40px; /* Reduce size */
         height: 40px;
         font-size: 20px;
+      
     }
 }
 
@@ -675,6 +677,7 @@ section.gallery {
   
   #toTopBtn {
     animation: bounce 2s infinite;
+    padding-bottom: 3rem;
   }
   
   /* Slide-down animation for sticky header */
